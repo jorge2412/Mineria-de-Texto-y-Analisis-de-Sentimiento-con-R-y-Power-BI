@@ -1,0 +1,6 @@
+Graficas
+https://appsource.microsoft.com/en-us/marketplace/apps?product=power-bi-visuals&page=1&src=office&corrid=1c2c4469-af3c-49d0-bd12-dc80c03b18c5&omexanonuid=7b271f67-e3ae-485c-9940-ea3031cee309
+
+PowerBI Gallery
+http://community.powerbi.com/t5/Data-Stories-Gallery/Online-Sentiment-Analysis/m-p/24092
+

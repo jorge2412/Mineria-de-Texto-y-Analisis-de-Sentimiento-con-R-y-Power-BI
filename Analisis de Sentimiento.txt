@@ -1,0 +1,12 @@
+// Retorna el Analisis de Sentimeinto entre 0 y 1
+(text) => let
+    apikey      = "8cfa46c04a7148e29d294ad8f1df1f63",
+    endpoint    = "https://eastus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment",
+    jsontext    = Text.FromBinary(Json.FromValue(Text.Start(Text.Trim(text), 5000))),
+    jsonbody    = "{ documents: [ { language: ""es"", id: ""0"", text: " & jsontext & " } ] }",
+    bytesbody   = Text.ToBinary(jsonbody),
+    headers     = [#"Ocp-Apim-Subscription-Key" = apikey],
+    bytesresp   = Web.Contents(endpoint, [Headers=headers, Content=bytesbody]),
+    jsonresp    = Json.Document(bytesresp),
+    sentiment   = jsonresp[documents]{0}[score]
+in  sentiment
